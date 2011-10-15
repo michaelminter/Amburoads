@@ -59,7 +59,7 @@
       var marker<%= i %> = new google.maps.Marker({
         position: latlng<%= i %>,
         map: map,
-        title:"<%= hospital['properties']['name'] %>"
+        title:"<%= hospital['properties']['name'].titleize %>"
       });
     <% end %>
     

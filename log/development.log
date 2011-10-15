@@ -4502,3 +4502,32 @@ ActionView::MissingTemplate (Missing template pages/set_geolocation, application
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
 MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
 MONGODB admin['$cmd'].find({:ismaster=>1}).limit(-1)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 03:59:34 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (428.8ms)
+Completed 200 OK in 439ms (Views: 438.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 15 03:59:35 -0500 2011
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 15 03:59:35 -0500 2011
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/set_geolocation" for 127.0.0.1 at Sat Oct 15 03:59:35 -0500 2011
+  Processing by PagesController#set_geolocation as */*
+  Parameters: {"latitude"=>"30.3473992", "longitude"=>"-97.7149748"}
+WARNING: Can't verify CSRF token authenticity
+--- 30.3473992, -97.7149748 ---
+Completed 500 Internal Server Error in 28ms
+
+ActionView::MissingTemplate (Missing template pages/set_geolocation, application/set_geolocation with {:locale=>[:en, :en], :handlers=>[:coffee, :erb, :builder], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json]}. Searched in:
+  * "/home/michael/Sites/Amburoads/app/views"
+):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (3.8ms)
