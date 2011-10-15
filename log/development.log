@@ -4531,3 +4531,530 @@ ActionView::MissingTemplate (Missing template pages/set_geolocation, application
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:27:02 -0500 2011
+  Processing by PagesController#home as HTML
+ERROR: compiling _app_views_pages_home_html_erb___149437299__617005088 RAISED compile error
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting ')'
+'); directions = JSON.parse(response) 
+ ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:30: syntax error, unexpected '<', expecting kEND
+<div style="background:#FFFFFF;...
+ ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:31: syntax error, unexpected '<'
+  <a href="#" onclick="$(\'#more\...
+   ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting kEND
+  <a href="#" onclick="$(\'#more\').toggle(); retur...
+                     ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:31: syntax error, unexpected tCONSTANT, expecting kDO or '{' or '('
+...); return false;">Show Details</a>
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:32: syntax error, unexpected '<'
+  <div id="more" style="display:none;"><br /><br />
+                                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:33: unmatched ): />
+  ');@output_buffer.append= ( hospitals['features'].inspect );@output_buffer.safe_concat('<br /
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:33: syntax error, unexpected '<'
+...ut_buffer.safe_concat('<br /><br />
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:35: unknown regexp options - dv
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:36: syntax error, unexpected '<'
+</div>
+ ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:38: unknown regexp options - javacrpt
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting kEND
+<script type="text/javascript">
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting kEND
+...ent.getElementById("map_canvas"), myOptions);
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:66: syntax error, unexpected tIDENTIFIER, expecting kEND
+...append= ( hospital['properties']['name'].titleize );@output_...
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:66: syntax error, unexpected tIDENTIFIER, expecting kEND
+...( hospital['properties']['name'].titleize );@output_buffer.s...
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91: syntax error, unexpected tIDENTIFIER, expecting kEND
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+                     ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91: syntax error, unexpected tIDENTIFIER, expecting kEND
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+                                   ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91: unterminated string meets end of file
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91: syntax error, unexpected $end, expecting kEND
+Function body:           def _app_views_pages_home_html_erb___149437299__617005088(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "pages/home";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map_canvas { height: 100% }
+</style>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?sensor=false">
+</script>
+
+'); require 'open-uri' 
+ require "execjs" 
+@output_buffer.safe_concat('
+');
+@output_buffer.safe_concat('
+'); ip = request.env['REMOTE_ADDR'] 
+ response = open("http://api.infochimps.com/web/analytics/ip_mapping/digital_element/geo?apikey=michaelminter-t_TKeMFkj0Ikn8ysSFFptcnlh69&ip=72.48.145.180").read 
+ geo_data = JSON.parse(response) 
+@output_buffer.safe_concat('
+'); response = open("http://api.infochimps.com/geo/location/infochimps/us_hospitals/places?apikey=michaelminter-t_TKeMFkj0Ikn8ysSFFptcnlh69&lng=#{geo_data['longitude']}&lat=#{geo_data['latitude']}&zoom=5").read 
+ hospitals = JSON.parse(response) 
+@output_buffer.safe_concat('
+'); response = open("http://maps.googleapis.com/maps/api/directions/output?source=<%= "#{geo_data['latitude']},#{geo_data['longitude']}" ;@output_buffer.safe_concat('&destination=-97.726654,30.290665").read %>
+'); directions = JSON.parse(response) 
+@output_buffer.safe_concat('
+<div style="background:#FFFFFF;opacity:0.75;padding:20px;position:absolute;top:10px;right:10px;width:300px;z-index:9999;">
+  <a href="#" onclick="$(\'#more\').toggle(); return false;">Show Details</a>
+  <div id="more" style="display:none;"><br /><br />
+  ');@output_buffer.append= ( hospitals['features'].inspect );@output_buffer.safe_concat('<br /><br />
+  
+  </div>
+</div>
+
+<script type="text/javascript">
+  function error(msg) {}  
+  
+  function success(position) {
+    //var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+    var latlng = new google.maps.LatLng(');@output_buffer.append= ( geo_data['latitude'] );@output_buffer.safe_concat(', ');@output_buffer.append= ( geo_data['longitude'] );@output_buffer.safe_concat(');
+    console.log(latlng);
+    
+    var myOptions = {
+      zoom: 13,
+      center: latlng,
+      mapTypeControl: false,
+      navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  
+    var marker = new google.maps.Marker({
+      position: latlng,
+      map: map,
+      title:"');@output_buffer.append= ( ip );@output_buffer.safe_concat('"
+    });
+    
+');     hospitals['features'].each_with_index do |hospital,i| 
+@output_buffer.safe_concat('      var latlng');@output_buffer.append= ( i );@output_buffer.safe_concat(' = new google.maps.LatLng(');@output_buffer.append= ( hospital['geometry']['coordinates'][1] );@output_buffer.safe_concat(', ');@output_buffer.append= ( hospital['geometry']['coordinates'][0] );@output_buffer.safe_concat(');
+      var marker');@output_buffer.append= ( i );@output_buffer.safe_concat(' = new google.maps.Marker({
+        position: latlng');@output_buffer.append= ( i );@output_buffer.safe_concat(',
+        map: map,
+        title:"');@output_buffer.append= ( hospital['properties']['name'].titleize );@output_buffer.safe_concat('"
+      });
+');     end 
+@output_buffer.safe_concat('    
+    var lat = map.getCenter().lat();
+    var lng = map.getCenter().lng();
+  }
+  
+  //$(document).bind(\'cbox_complete\', function(){
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(success, error);
+    } else {
+      error(\'not supported\');
+    }
+  //});
+  
+  $(function(){ 
+    navigator.geolocation.getCurrentPosition(function(pos){
+      $.post(\'/set_geolocation\',{latitude: pos.coords.latitude, longitude: pos.coords.longitude}) 
+    });      
+  });
+</script>
+
+</head>
+<body>
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+</body>
+</html>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/template.rb:190:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/template.rb:143:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/notifications.rb:55:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/template.rb:142:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:39:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:12:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_view/renderer/renderer.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:99:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:16:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:167:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:416:in `_run__367793087__process_action__516519628__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:386:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/notifications.rb:53:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/params_wrapper.rb:201:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/abstract_controller/base.rb:121:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/abstract_controller/rendering.rb:45:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal.rb:193:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_controller/metal.rb:236:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:152:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:96:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:75:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/code_generation.rb:95:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.8.3/lib/rack/mount/route_set.rb:141:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/usr/lib/ruby/gems/1.8/gems/mongoid-2.3.1/lib/rack/mongoid/middleware/identity_map.rb:33:in `call'
+/usr/lib/ruby/gems/1.8/gems/mongoid-2.3.1/lib/mongoid.rb:130:in `unit_of_work'
+/usr/lib/ruby/gems/1.8/gems/mongoid-2.3.1/lib/rack/mongoid/middleware/identity_map.rb:33:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/etag.rb:23:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/conditionalget.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/session/abstract/id.rb:195:in `context'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/session/abstract/id.rb:190:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/sendfile.rb:101:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.3.4/lib/rack/lock.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.0/lib/rails/railtie/configurable.rb:30:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.1.0/lib/rails/railtie/configurable.rb:30:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/rack/application_spawner.rb:205:in `start_request_handler'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/rack/application_spawner.rb:170:in `send'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/rack/application_spawner.rb:170:in `handle_spawn_application'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/utils.rb:479:in `safe_fork'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/rack/application_spawner.rb:165:in `handle_spawn_application'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server.rb:180:in `start'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+/usr/lib/ruby/gems/1.8/gems/passenger-3.0.9/helper-scripts/passenger-spawn-server:99
+Rendered pages/home.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (compile error
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:28: syntax error, unexpected tSTRING_BEG, expecting ')'
+'); directions = JSON.parse(response) 
+ ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:30: syntax error, unexpected '<', expecting kEND
+<div style="background:#FFFFFF;...
+ ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:31: syntax error, unexpected '<'
+  <a href="#" onclick="$(\'#more\...
+   ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:31: syntax error, unexpected tIDENTIFIER, expecting kEND
+  <a href="#" onclick="$(\'#more\').toggle(); retur...
+                     ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:31: syntax error, unexpected tCONSTANT, expecting kDO or '{' or '('
+...); return false;">Show Details</a>
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:32: syntax error, unexpected '<'
+  <div id="more" style="display:none;"><br /><br />
+                                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:33: unmatched ): />
+  ');@output_buffer.append= ( hospitals['features'].inspect );@output_buffer.safe_concat('<br /
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:33: syntax error, unexpected '<'
+...ut_buffer.safe_concat('<br /><br />
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:35: unknown regexp options - dv
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:36: syntax error, unexpected '<'
+</div>
+ ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:38: unknown regexp options - javacrpt
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting kEND
+<script type="text/javascript">
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:53: syntax error, unexpected tIDENTIFIER, expecting kEND
+...ent.getElementById("map_canvas"), myOptions);
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:66: syntax error, unexpected tIDENTIFIER, expecting kEND
+...append= ( hospital['properties']['name'].titleize );@output_...
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:66: syntax error, unexpected tIDENTIFIER, expecting kEND
+...( hospital['properties']['name'].titleize );@output_buffer.s...
+                              ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91: syntax error, unexpected tIDENTIFIER, expecting kEND
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+                     ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91: syntax error, unexpected tIDENTIFIER, expecting kEND
+  <div id="map_canvas" style="width:100%; height:100%"></div>
+                                   ^
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91: unterminated string meets end of file
+/home/michael/Sites/Amburoads/app/views/pages/home.html.erb:91: syntax error, unexpected $end, expecting kEND):
+    25: <% hospitals = JSON.parse(response) %>
+    26: 
+    27: <% response = open("http://maps.googleapis.com/maps/api/directions/output?source=<%= "#{geo_data['latitude']},#{geo_data['longitude']}" %>&destination=-97.726654,30.290665").read %>
+    28: <% directions = JSON.parse(response) %>
+    29: 
+    30: <div style="background:#FFFFFF;opacity:0.75;padding:20px;position:absolute;top:10px;right:10px;width:300px;z-index:9999;">
+    31:   <a href="#" onclick="$('#more').toggle(); return false;">Show Details</a>
+  app/views/pages/home.html.erb:91:in `compile'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:27:37 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (606.1ms)
+Completed 500 Internal Server Error in 614ms
+
+ActionView::Template::Error (404 Not Found):
+    24: <% response = open("http://api.infochimps.com/geo/location/infochimps/us_hospitals/places?apikey=michaelminter-t_TKeMFkj0Ikn8ysSFFptcnlh69&lng=#{geo_data['longitude']}&lat=#{geo_data['latitude']}&zoom=5").read %>
+    25: <% hospitals = JSON.parse(response) %>
+    26: 
+    27: <% response = open("http://maps.googleapis.com/maps/api/directions/output?source=#{geo_data['latitude']},#{geo_data['longitude']}&destination=-97.726654,30.290665").read %>
+    28: <% directions = JSON.parse(response) %>
+    29: 
+    30: <div style="background:#FFFFFF;opacity:0.75;padding:20px;position:absolute;top:10px;right:10px;width:300px;z-index:9999;">
+  app/views/pages/home.html.erb:27:in `_app_views_pages_home_html_erb___149437299__617538298'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:28:26 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (588.9ms)
+Completed 500 Internal Server Error in 598ms
+
+ActionView::Template::Error (404 Not Found):
+    24: <% response = open("http://api.infochimps.com/geo/location/infochimps/us_hospitals/places?apikey=michaelminter-t_TKeMFkj0Ikn8ysSFFptcnlh69&lng=#{geo_data['longitude']}&lat=#{geo_data['latitude']}&zoom=5").read %>
+    25: <% hospitals = JSON.parse(response) %>
+    26: 
+    27: <% response = open("http://maps.googleapis.com/maps/api/directions/output?origin=#{geo_data['latitude']},#{geo_data['longitude']}&destination=-97.726654,30.290665").read %>
+    28: <% directions = JSON.parse(response) %>
+    29: 
+    30: <div style="background:#FFFFFF;opacity:0.75;padding:20px;position:absolute;top:10px;right:10px;width:300px;z-index:9999;">
+  app/views/pages/home.html.erb:27:in `_app_views_pages_home_html_erb___149437299__618454328'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (70.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:29:16 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (505.7ms)
+Completed 200 OK in 522ms (Views: 521.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 15 04:29:16 -0500 2011
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 15 04:29:16 -0500 2011
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/set_geolocation" for 127.0.0.1 at Sat Oct 15 04:29:17 -0500 2011
+  Processing by PagesController#set_geolocation as */*
+  Parameters: {"latitude"=>"30.3473992", "longitude"=>"-97.7149748"}
+WARNING: Can't verify CSRF token authenticity
+--- 30.3473992, -97.7149748 ---
+Completed 500 Internal Server Error in 17ms
+
+ActionView::MissingTemplate (Missing template pages/set_geolocation, application/set_geolocation with {:locale=>[:en, :en], :handlers=>[:coffee, :erb, :builder], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json]}. Searched in:
+  * "/home/michael/Sites/Amburoads/app/views"
+):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:29:43 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (414.8ms)
+Completed 200 OK in 424ms (Views: 424.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 15 04:29:44 -0500 2011
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 15 04:29:44 -0500 2011
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/set_geolocation" for 127.0.0.1 at Sat Oct 15 04:29:45 -0500 2011
+  Processing by PagesController#set_geolocation as */*
+  Parameters: {"latitude"=>"30.3473992", "longitude"=>"-97.7149748"}
+WARNING: Can't verify CSRF token authenticity
+--- 30.3473992, -97.7149748 ---
+Completed 500 Internal Server Error in 34ms
+
+ActionView::MissingTemplate (Missing template pages/set_geolocation, application/set_geolocation with {:locale=>[:en, :en], :handlers=>[:coffee, :erb, :builder], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json]}. Searched in:
+  * "/home/michael/Sites/Amburoads/app/views"
+):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1}).limit(-1)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:31:25 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (544.2ms)
+Completed 200 OK in 572ms (Views: 571.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:35:25 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (452.1ms)
+Completed 200 OK in 464ms (Views: 463.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 15 04:35:25 -0500 2011
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 15 04:35:25 -0500 2011
+Served asset /application.css - 304 Not Modified (0ms)
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/set_geolocation" for 127.0.0.1 at Sat Oct 15 04:35:26 -0500 2011
+  Processing by PagesController#set_geolocation as */*
+  Parameters: {"latitude"=>"30.3473992", "longitude"=>"-97.7149748"}
+WARNING: Can't verify CSRF token authenticity
+--- 30.3473992, -97.7149748 ---
+Completed 500 Internal Server Error in 16ms
+
+ActionView::MissingTemplate (Missing template pages/set_geolocation, application/set_geolocation with {:locale=>[:en, :en], :handlers=>[:coffee, :erb, :builder], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json]}. Searched in:
+  * "/home/michael/Sites/Amburoads/app/views"
+):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:36:18 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (407.6ms)
+Completed 200 OK in 418ms (Views: 417.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 15 04:36:19 -0500 2011
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 15 04:36:19 -0500 2011
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/set_geolocation" for 127.0.0.1 at Sat Oct 15 04:36:19 -0500 2011
+  Processing by PagesController#set_geolocation as */*
+  Parameters: {"latitude"=>"30.3473992", "longitude"=>"-97.7149748"}
+WARNING: Can't verify CSRF token authenticity
+--- 30.3473992, -97.7149748 ---
+Completed 500 Internal Server Error in 28ms
+
+ActionView::MissingTemplate (Missing template pages/set_geolocation, application/set_geolocation with {:locale=>[:en, :en], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :handlers=>[:coffee, :erb, :builder]}. Searched in:
+  * "/home/michael/Sites/Amburoads/app/views"
+):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Oct 15 04:37:03 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (689.1ms)
+Completed 200 OK in 700ms (Views: 699.3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at Sat Oct 15 04:37:04 -0500 2011
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at Sat Oct 15 04:37:04 -0500 2011
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/set_geolocation" for 127.0.0.1 at Sat Oct 15 04:37:04 -0500 2011
+  Processing by PagesController#set_geolocation as */*
+  Parameters: {"latitude"=>"30.3473992", "longitude"=>"-97.7149748"}
+WARNING: Can't verify CSRF token authenticity
+--- 30.3473992, -97.7149748 ---
+Completed 500 Internal Server Error in 14ms
+
+ActionView::MissingTemplate (Missing template pages/set_geolocation, application/set_geolocation with {:locale=>[:en, :en], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :handlers=>[:coffee, :erb, :builder]}. Searched in:
+  * "/home/michael/Sites/Amburoads/app/views"
+):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
