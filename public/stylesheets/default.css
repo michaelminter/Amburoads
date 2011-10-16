@@ -1,0 +1,5 @@
+#sms-container { background:url(/images/65.png);border-radius:5px;padding:20px;position:absolute;top:70%;left:20px;z-index:97; }
+#sms-container form { z-index:99; }
+#sms-container form input { z-index:100; }
+
+#notice { background:url(/images/65.png);border-radius:5px;color:#CCCCCC;font:26px Arial,sans-serif;font-weight:bold;margin-left:-220px;padding:20px;position:absolute;bottom:20px;left:50%;text-align:center;text-shadow:1px 1px 0 #000000;width:400px;z-index:97; }
