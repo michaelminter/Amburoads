@@ -1,93 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<style type="text/css">
-  html { height: 100% }
-  body { height: 100%; margin: 0; padding: 0 }
-  #map_canvas { height: 100% }
-</style>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script type="text/javascript"
-    src="http://maps.googleapis.com/maps/api/js?sensor=false">
-</script>
-
-<% require 'open-uri' %>
-<% require "execjs" %>
-
-<%# javascript = ExecJS.eval "navigator.geolocation.getCurrentPosition" %>
-
-<% ip = request.env['REMOTE_ADDR'] %>
-<% response = open("http://api.infochimps.com/web/analytics/ip_mapping/digital_element/geo?apikey=michaelminter-t_TKeMFkj0Ikn8ysSFFptcnlh69&ip=72.48.145.180").read %>
-<% geo_data = JSON.parse(response) %>
-
-<% response = open("http://api.infochimps.com/geo/location/infochimps/us_hospitals/places?apikey=michaelminter-t_TKeMFkj0Ikn8ysSFFptcnlh69&lng=#{geo_data['longitude']}&lat=#{geo_data['latitude']}&zoom=5").read %>
-<% hospitals = JSON.parse(response) %>
-
-<% response = open("http://maps.googleapis.com/maps/api/directions/json?origin=#{geo_data['latitude']},#{geo_data['longitude']}&destination=30.290665,-97.726654&sensor=false").read %>
-<% directions = JSON.parse(response) %>
-
-<div style="background:#FFFFFF;opacity:0.75;padding:20px;position:absolute;top:10px;right:10px;width:300px;z-index:9999;">
-  <a href="#" onclick="$('#more').toggle(); return false;">Show Details</a>
-  <div id="more" style="display:none;"><br /><br />
-  <%= hospitals['features'].inspect %><br /><br />
-  <%= directions.inspect %>
-  </div>
-</div>
-
-<script type="text/javascript">
-  function error(msg) {}  
-  
-  function success(position) {
-    //var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-    var latlng = new google.maps.LatLng(<%= geo_data['latitude'] %>, <%= geo_data['longitude'] %>);
-    console.log(latlng);
-    
-    var myOptions = {
-      zoom: 13,
-      center: latlng,
-      mapTypeControl: false,
-      navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-  
-    var marker = new google.maps.Marker({
-      position: latlng,
-      map: map,
-      title:"<%= ip %>"
-    });
-    
-    <% hospitals['features'].each_with_index do |hospital,i| %>
-      var latlng<%= i %> = new google.maps.LatLng(<%= hospital['geometry']['coordinates'][1] %>, <%= hospital['geometry']['coordinates'][0] %>);
-      var marker<%= i %> = new google.maps.Marker({
-        position: latlng<%= i %>,
-        map: map,
-        title:"<%= hospital['properties']['name'].titleize %>"
-      });
-    <% end %>
-    
-    var lat = map.getCenter().lat();
-    var lng = map.getCenter().lng();
-  }
-  
-  //$(document).bind('cbox_complete', function(){
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, error);
-    } else {
-      error('not supported');
-    }
-  //});
-  
-  $(function(){ 
-    navigator.geolocation.getCurrentPosition(function(pos){
-      $.post('/set_geolocation',{latitude: pos.coords.latitude, longitude: pos.coords.longitude}) 
-    });      
-  });
-</script>
-
+	<title>Amburoads</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+  	html { height: 100% }
+  	body { height: 100%; margin: 0; padding: 0 }
+  	#map_canvas { height: 100% }
+	</style>
+	<link href="/stylesheets/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="/javascripts/directions.js"></script>
 </head>
 <body>
-  <div id="map_canvas" style="width:100%; height:100%"></div>
+
+<div id="notice" style="<%= 'display:none;' if notice.blank? %>"><%= notice %></div>
+
+<div id="map_canvas" style="width:100%; height:100%"></div>
+
+<div id="sms-container">
+	<div></div>
+	<form action="/sms" method="POST">
+		<input type="hidden" name="origin" id="input_origin" />
+		<input type="hidden" name="destination" id="input_destination" />
+		<input type="text" name="phone" placeholder="Phone Number" />
+		<input type="submit" value="SEND" />
+	</form>
+	<img src="/images/powered_by_twilio.png" style="margin-top:5px;" />
+</div>
+
 </body>
 </html>

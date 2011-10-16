@@ -4,7 +4,7 @@ Amburoads::Application.routes.draw do
   
   root :to => 'pages#home'
   
-  post '/set_geolocation' => 'pages#set_geolocation'
+  match '/sms' => 'pages#sms'
   
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
