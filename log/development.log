@@ -9312,3 +9312,92 @@ Started GET "/" for 127.0.0.1 at Sun Oct 16 15:23:42 -0500 2011
   Processing by PagesController#home as HTML
 Rendered pages/home.html.erb within layouts/application (0.6ms)
 Completed 200 OK in 11ms (Views: 10.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 16 15:33:26 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.1ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1}).limit(-1)
+
+
+Started GET "/" for 127.0.0.1 at Sun Oct 16 20:55:34 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 92ms (Views: 91.3ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1}).limit(-1)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 17:56:28 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 72ms (Views: 71.5ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1}).limit(-1)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:05:58 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 19ms (Views: 18.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:06:25 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:06:46 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:07:10 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:07:24 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:09:07 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.3ms)
+
+
+Started GET "/?q=strip" for 127.0.0.1 at Mon Oct 17 18:09:16 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"strip"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.7ms)
+
+
+Started GET "/?q=food" for 127.0.0.1 at Mon Oct 17 18:09:34 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"food"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 11.7ms)
+
+
+Started GET "/?q=food" for 127.0.0.1 at Mon Oct 17 18:09:58 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"food"}
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms)
+
+
+Started GET "/?q=club" for 127.0.0.1 at Mon Oct 17 18:10:10 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"club"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.7ms)

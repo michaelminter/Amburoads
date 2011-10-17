@@ -62,7 +62,12 @@ function success(position) {
 }
 
 function near_home(lat,long,miles,cb) {
-	var url = "http://api.infochimps.com/geo/location/foursquare/places/search?g.radius="+miles_to_meters(miles)+"&g.latitude="+lat+"&g.longitude="+long+"&f.q=hospital&apikey=michaelminter-t_TKeMFkj0Ikn8ysSFFptcnlh69";
+	if (get_params()['q'] == '') {
+		var query = 'hospital';
+	} else {
+		var query = get_params()['q'];
+	}
+	var url = "http://api.infochimps.com/geo/location/foursquare/places/search?g.radius="+miles_to_meters(miles)+"&g.latitude="+lat+"&g.longitude="+long+"&f.q="+query+"&apikey=michaelminter-t_TKeMFkj0Ikn8ysSFFptcnlh69";
 	var places = [];
 	
 	$.getJSON(url, function(data) {
@@ -76,6 +81,14 @@ function near_home(lat,long,miles,cb) {
 	});
 }
 
+function get_params() {
+	var vars = {};
+	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		vars[key] = value;
+	});
+	return vars;
+}
+    
 function miles_to_meters(miles) {
 	var meters = miles * 1609.344;
 	return meters;
