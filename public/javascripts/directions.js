@@ -28,8 +28,6 @@ function success(position) {
     title: 'Infochimps'
   });
   
-  //30.273054&g.longitude=-97.757598
-  
   var lat = map.getCenter().lat();
   var lng = map.getCenter().lng();
   
@@ -62,7 +60,7 @@ function success(position) {
 }
 
 function near_home(lat,long,miles,cb) {
-	if (get_params()['q'] == '') {
+	if (get_params()['q'] == undefined) {
 		var query = 'hospital';
 	} else {
 		var query = get_params()['q'];

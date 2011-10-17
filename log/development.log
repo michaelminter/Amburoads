@@ -9401,3 +9401,196 @@ Started GET "/?q=club" for 127.0.0.1 at Mon Oct 17 18:10:10 -0500 2011
   Parameters: {"q"=>"club"}
 Rendered pages/home.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 9ms (Views: 8.7ms)
+
+
+Started GET "/?q=adult" for 127.0.0.1 at Mon Oct 17 18:18:38 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"adult"}
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms)
+
+
+Started GET "/?q=apartment" for 127.0.0.1 at Mon Oct 17 18:20:24 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"apartment"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 8.0ms)
+
+
+Started GET "/?q=camden" for 127.0.0.1 at Mon Oct 17 18:20:34 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"camden"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 11.8ms)
+
+
+Started POST "/sms" for 127.0.0.1 at Mon Oct 17 18:20:54 -0500 2011
+  Processing by PagesController#sms as HTML
+  Parameters: {"destination"=>"30.20427126,-97.86037761", "origin"=>"30.2031822,-97.8609244", "phone"=>""}
+WARNING: Can't verify CSRF token authenticity
+---- 30.2031822,-97.8609244 -> 30.20427126,-97.86037761 -----
+----- TwilioResponseSMSMessageStatusqueuedDirectionoutbound-apiAccountSidAC02ce67c726254b128d04d4496ff46bb3Uri/2010-04-01/Accounts/AC02ce67c726254b128d04d4496ff46bb3/SMS/Messages/SMc0abc0106c8e42718d63a7f0574eb558BodyHead north toward Mule Deer DrSidSMc0abc0106c8e42718d63a7f0574eb558From+14155992671DateCreatedMon, 17 Oct 2011 23:20:56 +0000DateUpdatedMon, 17 Oct 2011 23:20:56 +0000To+15125079459DateSentPriceApiVersion2010-04-01 -----
+Redirected to http://amburoads.dev/
+Completed 302 Found in 1216ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:20:56 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:30:36 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 8.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:31:00 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 11.4ms)
+
+
+Started GET "/q=hospital" for 127.0.0.1 at Mon Oct 17 18:31:06 -0500 2011
+
+ActionController::RoutingError (No route matches [GET] "/q=hospital"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:31:10 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:31:51 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 87ms (Views: 86.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:32:09 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:32:20 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:32:35 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:32:46 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 12.2ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:32:59 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 12.0ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:33:46 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.2ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:33:58 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 10.1ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:34:07 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:34:16 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 7.9ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:35:07 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.2ms)
+
+
+Started GET "/?q=hospital" for 127.0.0.1 at Mon Oct 17 18:36:13 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"hospital"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:36:21 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 13.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:36:50 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:37:03 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:37:22 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 9ms (Views: 7.1ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:37:56 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:38:11 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 7.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:38:39 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.2ms)
+
+
+Started GET "/?q=bar" for 127.0.0.1 at Mon Oct 17 18:38:53 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"bar"}
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 11ms (Views: 10.8ms)
