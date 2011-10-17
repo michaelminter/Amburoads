@@ -9594,3 +9594,28 @@ Started GET "/?q=bar" for 127.0.0.1 at Mon Oct 17 18:38:53 -0500 2011
   Parameters: {"q"=>"bar"}
 Rendered pages/home.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 11ms (Views: 10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:52:23 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 11.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:53:36 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 14ms (Views: 13.5ms)
+
+
+Started GET "/?q=food" for 127.0.0.1 at Mon Oct 17 18:53:47 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"food"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 13ms (Views: 12.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Oct 17 18:53:55 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.8ms)
