@@ -35,7 +35,7 @@ class PagesController < ApplicationController
 		
 		messages.each do |message|
 			body = message.join("\n\n")
-			if (twilio_resp = Twilio::Sms.message('+14155992671','+15125079459',body))
+			if (twilio_resp = Twilio::Sms.message('+17147708060',params['phone'],body))
 				sent = true
 			else
 				sent = false

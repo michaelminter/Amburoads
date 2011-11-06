@@ -9619,3 +9619,170 @@ Started GET "/" for 127.0.0.1 at Mon Oct 17 18:53:55 -0500 2011
   Processing by PagesController#home as HTML
 Rendered pages/home.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 11ms (Views: 10.8ms)
+
+
+Started GET "/?q=mcdonalds" for 127.0.0.1 at Mon Oct 17 21:57:41 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"mcdonalds"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 11.0ms)
+
+
+Started GET "/?q=mcdonald's" for 127.0.0.1 at Mon Oct 17 21:57:59 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"mcdonald's"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 8ms (Views: 7.8ms)
+
+
+Started GET "/?q=food" for 127.0.0.1 at Mon Oct 17 22:52:05 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"food"}
+Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 28.2ms)
+
+
+Started GET "/?q=food" for 127.0.0.1 at Mon Oct 17 22:54:30 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"food"}
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 8.1ms)
+
+
+Started GET "/?q=mall" for 127.0.0.1 at Mon Oct 17 23:14:42 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"mall"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 11.1ms)
+
+
+Started GET "/?q=food" for 127.0.0.1 at Mon Oct 17 23:18:12 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"food"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Oct 18 18:26:04 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 51ms (Views: 50.2ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1}).limit(-1)
+
+
+Started GET "/" for 127.0.0.1 at Fri Oct 21 18:44:30 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 96ms (Views: 95.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Oct 21 18:44:42 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 13ms (Views: 13.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Oct 21 19:20:40 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 10ms (Views: 9.3ms)
+MongoDB logging. Please note that logging negatively impacts performance and should be disabled for high-performance production apps.
+MONGODB admin['$cmd'].find({:ismaster=>1}).limit(-1)
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 23:05:39 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 57ms (Views: 57.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 23:05:45 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 11ms (Views: 10.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 23:05:49 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 8.9ms)
+
+
+Started POST "/sms" for 127.0.0.1 at Sat Nov 05 23:07:51 -0500 2011
+  Processing by PagesController#sms as HTML
+  Parameters: {"destination"=>"30.269783,-97.74221", "origin"=>"30.267153,-97.74306", "phone"=>"+15125079459"}
+WARNING: Can't verify CSRF token authenticity
+---- 30.267153,-97.74306 -> 30.269783,-97.74221 -----
+----- TwilioResponseSMSMessageStatusqueuedDirectionoutbound-apiAccountSidAC02ce67c726254b128d04d4496ff46bb3Uri/2010-04-01/Accounts/AC02ce67c726254b128d04d4496ff46bb3/SMS/Messages/SM01ffb7a2bffe4a95ab29ace36b6f9a31BodyHead east on E 5th St toward Brazos St&#10;&#10;Take the 1st left onto Brazos St&#10;&#10;Take the 1st left onto E 6th St/Old Pecan St&#10;&#10;Take the 1st right onto N Congress AveSidSM01ffb7a2bffe4a95ab29ace36b6f9a31From+17147708060DateCreatedSun, 06 Nov 2011 04:07:54 +0000DateUpdatedSun, 06 Nov 2011 04:07:54 +0000To+15125079459DateSentPriceApiVersion2010-04-01 -----
+Redirected to http://amburoads.dev/
+Completed 302 Found in 1538ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 23:07:53 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 66ms (Views: 66.0ms)
+
+
+Started POST "/sms" for 127.0.0.1 at Sat Nov 05 23:08:49 -0500 2011
+  Processing by PagesController#sms as HTML
+  Parameters: {"destination"=>"30.269783,-97.74221", "origin"=>"30.267153,-97.74306", "phone"=>"512-507-9459"}
+WARNING: Can't verify CSRF token authenticity
+---- 30.267153,-97.74306 -> 30.269783,-97.74221 -----
+----- TwilioResponseSMSMessageStatusqueuedDirectionoutbound-apiAccountSidAC02ce67c726254b128d04d4496ff46bb3Uri/2010-04-01/Accounts/AC02ce67c726254b128d04d4496ff46bb3/SMS/Messages/SM224a05ad66aa4a4aad11261e43c42702BodyHead east on E 5th St toward Brazos St&#10;&#10;Take the 1st left onto Brazos St&#10;&#10;Take the 1st left onto E 6th St/Old Pecan St&#10;&#10;Take the 1st right onto N Congress AveSidSM224a05ad66aa4a4aad11261e43c42702From+17147708060DateCreatedSun, 06 Nov 2011 04:08:51 +0000DateUpdatedSun, 06 Nov 2011 04:08:51 +0000To+15125079459DateSentPriceApiVersion2010-04-01 -----
+Redirected to http://amburoads.dev/
+Completed 302 Found in 860ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 23:08:50 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 7.7ms)
+
+
+Started GET "/?q=zoo" for 127.0.0.1 at Sat Nov 05 23:09:13 -0500 2011
+  Processing by PagesController#home as HTML
+  Parameters: {"q"=>"zoo"}
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 10ms (Views: 9.8ms)
+
+
+Started POST "/sms" for 127.0.0.1 at Sat Nov 05 23:09:38 -0500 2011
+  Processing by PagesController#sms as HTML
+  Parameters: {"destination"=>"30.3710609292376,-97.7252340316772", "origin"=>"30.267153,-97.74306", "phone"=>"512-507-9459"}
+WARNING: Can't verify CSRF token authenticity
+---- 30.267153,-97.74306 -> 30.3710609292376,-97.7252340316772 -----
+----- TwilioResponseSMSMessageStatusqueuedDirectionoutbound-apiAccountSidAC02ce67c726254b128d04d4496ff46bb3Uri/2010-04-01/Accounts/AC02ce67c726254b128d04d4496ff46bb3/SMS/Messages/SMf5c92c0193f6421ca567fafb6ef1c53cBodyHead east on E 5th St toward Brazos St&#10;&#10;Turn right at the 2nd cross street onto San Jacinto Blvd&#10;&#10;Turn right onto E 1st St/E Cesar Chavez StSidSMf5c92c0193f6421ca567fafb6ef1c53cFrom+17147708060DateCreatedSun, 06 Nov 2011 04:09:40 +0000DateUpdatedSun, 06 Nov 2011 04:09:40 +0000To+15125079459DateSentPriceApiVersion2010-04-01 -----
+----- TwilioResponseRestExceptionStatus400MessageMaximum body length is 160 charactersMoreInfohttp://www.twilio.com/docs/errors/21605Code21605 -----
+----- TwilioResponseSMSMessageStatusqueuedDirectionoutbound-apiAccountSidAC02ce67c726254b128d04d4496ff46bb3Uri/2010-04-01/Accounts/AC02ce67c726254b128d04d4496ff46bb3/SMS/Messages/SMc1679213fcbd4c9b9b2137b278d2a574BodyKeep right at the fork, follow signs for Farm to Market Rd 1325/Burnet Rd and merge onto Research Blvd&#10;&#10;Turn rightSidSMc1679213fcbd4c9b9b2137b278d2a574From+17147708060DateCreatedSun, 06 Nov 2011 04:09:41 +0000DateUpdatedSun, 06 Nov 2011 04:09:41 +0000To+15125079459DateSentPriceApiVersion2010-04-01 -----
+Redirected to http://amburoads.dev/
+Completed 302 Found in 1973ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 23:09:40 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 76ms (Views: 75.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 23:12:24 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 9ms (Views: 8.6ms)
+
+
+Started POST "/sms" for 127.0.0.1 at Sat Nov 05 23:12:46 -0500 2011
+  Processing by PagesController#sms as HTML
+  Parameters: {"destination"=>"30.269783,-97.74221", "origin"=>"30.267153,-97.74306", "phone"=>"5125079459"}
+WARNING: Can't verify CSRF token authenticity
+---- 30.267153,-97.74306 -> 30.269783,-97.74221 -----
+----- TwilioResponseSMSMessageStatusqueuedDirectionoutbound-apiAccountSidAC02ce67c726254b128d04d4496ff46bb3Uri/2010-04-01/Accounts/AC02ce67c726254b128d04d4496ff46bb3/SMS/Messages/SMba957700e39544739d228f216297ab1bBodyHead east on E 5th St toward Brazos St&#10;&#10;Take the 1st left onto Brazos St&#10;&#10;Take the 1st left onto E 6th St/Old Pecan St&#10;&#10;Take the 1st right onto N Congress AveSidSMba957700e39544739d228f216297ab1bFrom+17147708060DateCreatedSun, 06 Nov 2011 04:12:48 +0000DateUpdatedSun, 06 Nov 2011 04:12:48 +0000To+15125079459DateSentPriceApiVersion2010-04-01 -----
+Redirected to http://amburoads.dev/
+Completed 302 Found in 755ms
+
+
+Started GET "/" for 127.0.0.1 at Sat Nov 05 23:12:47 -0500 2011
+  Processing by PagesController#home as HTML
+Rendered pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 8ms (Views: 8.1ms)
