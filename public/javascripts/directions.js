@@ -70,7 +70,7 @@ function near_home(lat,long,miles,cb) {
 	
 	$.getJSON(url, function(data) {
     $.each(data['results'], function(i, place) {
-    	if (query != 'hospital' || place['name'].search(/veterinary|pet\s|animal/i) == -1) {
+    	if (query != 'hospital' || place['name'].search(/veterinary|pet\s|animal|shoe/i) == -1) {
     		place['distance'] = distance(lat,long,place['coordinates'][1],place['coordinates'][0]);
     		places.push(place);
       } // add regex search feature
